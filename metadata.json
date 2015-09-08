@@ -24,8 +24,5 @@
       "name": "puppet",
       "version_requirement": ">= 3.0.0 < 5.0.0"
     }
-  ],
-  "checksums": {
-    "LICENSE": "5555ce2766d366432aa2478104208585"
-  }
+  ]
 }
