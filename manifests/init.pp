@@ -4,26 +4,24 @@
 #
 # Examples
 #
-#  class { wso2base:
-#    java => 'false',
-#  }
+#  class { wso2base: }
 #
 # Authors
 #
-# Thilina Piyasundara <mail@thilina.org>
+# Suhan Dharmasuriya
 #
 class wso2base (
-    ) inherits params {
-
-    class { users: }
+    ) inherits wso2base::params {
+      
+    class { wso2base::users :}
     ->
-    class { hosts : }
+    class { wso2base::hosts :}
     ->
-    class { environment :}
+    class { wso2base::environment :}
     ->
-    class { packages :}
+    class { wso2base::packages :}
     ->
-    class { java :}
+    class { wso2base::java :}
     ->
-    class { maven :}
+    class { wso2base::maven :}
 }

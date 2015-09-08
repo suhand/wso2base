@@ -2,26 +2,27 @@
 class wso2base::maven (
     $maven_package  = $wso2base::params::maven_package,
     $maven_dir      = $wso2base::params::maven_dir,
+    $package_repo   = $wso2base::params::package_repo,
     ) inherits wso2base::params {
     
-    exec { 
-        "download_mvn":
-            path    => ["/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin"],
-            cwd => "/opt/",
+    exec {
+        'download_mvn':
+            path    => ['/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin'],
+            cwd     => '/opt/',
             unless  => "test -f /opt/${maven_package}",
             command => "wget -q ${package_repo}/${maven_package}";
 
-        "extract_mvn":
-            path    => ["/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin"],
+        'extract_mvn':
+            path    => ['/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin'],
             unless  => "test -d /opt/${maven_dir}",
-            cwd => "/opt/",
+            cwd     => '/opt/',
             command => "tar xvfz ${maven_package}",
-            require => Exec["download_mvn"];
+            require => Exec['download_mvn'];
     }
 
-    file { "/opt/mvn":
+    file { '/opt/mvn':
         ensure  => link,
         target  => "/opt/${maven_dir}",
-        require => Exec["extract_mvn"];
-    }    
+        require => Exec['extract_mvn'];
+    }
 }

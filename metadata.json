@@ -1,15 +1,13 @@
 {
   "name": "suhan-wso2base",
-  "version": "2.0.1",
+  "version": "2.0.3",
   "source": "https://github.com/suhand/wso2base.git",
   "author": "Suhan Dharmasuriya",
-  "license": "Apache License, Version 2.0",
+  "license": "Apache-2.0",
   "summary": "This is the base puppet module required by all WSO2 products",
-  "description": "",
   "project_page": "https://github.com/suhand/wso2base",
   "dependencies": [],
-  "types": [],
-  "tags": ["wso2", "wso2base", "wso2 puppet module"],
+  "tags": ["wso2", "wso2base", "wso2-puppet-module"],
   "operatingsystem_support": [
     {
       "operatingsystem": "Ubuntu",
