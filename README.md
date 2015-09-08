@@ -6,8 +6,8 @@ Copy the required files to ```/etc/puppet/modules/wso2base/files```
 Go through the ```FilesToCopyHere.txt``` readme file.   
 #### Customize JDK versions
 e.g.: Installing JDK 7 Update 79 on Ubuntu x64  
-Download and copy the file ```jdk-7u79-linux-x64.gz``` to  ```/etc/puppet/modules/wso2base/files``` location.  
-Update the java section of ```/etc/puppet/modules/wso2base/manifests/params.pp```   
+* Download and copy the file ```jdk-7u79-linux-x64.gz``` to  ```/etc/puppet/modules/wso2base/files``` location.  
+* Update the java section of ```/etc/puppet/modules/wso2base/manifests/params.pp```   
 as follows,  
 ```
 # Java
