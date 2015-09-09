@@ -40,6 +40,6 @@ class wso2base::java (
         command   => "chown -R root:root ${java_dir}/${java_home}; 
                       chmod -R 755 ${java_dir}/${java_home}",
         require   => Exec['install_java'];
-    } 
+    }
 
 }
